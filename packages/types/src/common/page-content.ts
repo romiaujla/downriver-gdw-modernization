@@ -1,5 +1,7 @@
 import { z } from "zod";
 
+import { MediaAssetReferenceSchema } from "./media-assets.js";
+
 export const PageCallToActionSchema = z.object({
   href: z.string().min(1),
   label: z.string().min(1),
@@ -13,6 +15,7 @@ export const PageHeroSchema = z.object({
   description: z.string().min(1),
   primaryAction: PageCallToActionSchema.optional(),
   secondaryAction: PageCallToActionSchema.optional(),
+  media: MediaAssetReferenceSchema.optional(),
 });
 
 export type PageHero = z.infer<typeof PageHeroSchema>;
@@ -20,6 +23,7 @@ export type PageHero = z.infer<typeof PageHeroSchema>;
 export const ContentCardSchema = z.object({
   title: z.string().min(1),
   body: z.string().min(1),
+  media: MediaAssetReferenceSchema.optional(),
 });
 
 export type ContentCard = z.infer<typeof ContentCardSchema>;
@@ -27,6 +31,7 @@ export type ContentCard = z.infer<typeof ContentCardSchema>;
 export const ContentSectionSchema = z.object({
   title: z.string().min(1),
   intro: z.string().min(1).optional(),
+  media: MediaAssetReferenceSchema.optional(),
   items: z.array(ContentCardSchema).min(1),
 });
 
