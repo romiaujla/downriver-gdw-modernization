@@ -46,6 +46,7 @@ export const HomePageContentSchema = z.object({
     nextStepBody: z.string().min(1),
   }),
   foundationCards: z.array(ContentCardSchema).min(1),
+  outlineSections: z.array(ContentSectionSchema).min(1),
 });
 
 export type HomePageContent = z.infer<typeof HomePageContentSchema>;
