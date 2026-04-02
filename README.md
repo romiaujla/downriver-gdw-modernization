@@ -120,3 +120,6 @@ The agreed MVP sitemap and page inventory for `GRA-29` live in
 
 The implementation-ready header and footer navigation decisions for `GRA-30`
 live in [docs/mvp-navigation-model.md](docs/mvp-navigation-model.md).
+
+The MVP visual token baseline and typographic scale for `GRA-25` live in
+[docs/visual-tokens.md](docs/visual-tokens.md).
