@@ -66,6 +66,27 @@ export function HomePage() {
           </div>
         </SurfaceCard>
 
+        <SurfaceCard>
+          <div className="stack-column">
+            <Eyebrow>Homepage Outline</Eyebrow>
+            <div className="card-grid card-grid-outline">
+              {homePageContent.outlineSections.map((section) => (
+                <InfoCard key={section.title} title={section.title} tone="soft">
+                  <div className="stack-column">
+                    {section.intro ? <p>{section.intro}</p> : null}
+                    {section.items.map((item) => (
+                      <div key={item.title} className="stack-column">
+                        <h3>{item.title}</h3>
+                        <p>{item.body}</p>
+                      </div>
+                    ))}
+                  </div>
+                </InfoCard>
+              ))}
+            </div>
+          </div>
+        </SurfaceCard>
+
         <ContactFunnel pageKey="home" />
       </section>
     </PageShell>
