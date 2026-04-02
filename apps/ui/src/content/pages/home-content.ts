@@ -32,45 +32,56 @@ export const homePageContent = HomePageContentSchema.parse({
     nextStepBody:
       "Keep the homepage centered on welcome, trust-building, Punjabi School discovery, and the contact path while excluding events, bookings, donations, memberships, news, and gallery sprawl.",
   },
-  foundationCards: [
+  quickPathCards: [
     {
-      title: "Welcome hero",
-      body: "Lead with a warm welcome, brief spiritual framing, and one obvious contact-oriented action.",
-      media: {
-        assetId: homePageMedia.gallery[0]!.id,
-        role: "gallery",
-      },
-    },
-    {
-      title: "Quick paths",
-      body: "Preserve the strongest action choices from the current site, but condense them into a simple set of next-step routes that fit the MVP page inventory.",
+      title: "Learn About the Gurudwara",
+      body: "Start with the Gurudwara story, mission, and community role if you want background before taking action.",
       media: {
         assetId: aboutPageMedia.hero.id,
         role: "section",
       },
     },
     {
-      title: "Trust-building overview",
-      body: "Keep a concise Gurudwara introduction that explains the role of the community and directs deeper readers into About.",
+      title: "Explore Punjabi School",
+      body: "Families looking for program information should have a clear path into Punjabi School without encountering registration workflow noise.",
       media: {
         assetId: punjabiSchoolPageMedia.hero.id,
         role: "section",
       },
     },
     {
-      title: "Contact funnel",
-      body: "Make Contact the persistent destination for inquiries, join intent, and Punjabi School follow-up instead of scattering those actions across separate flows.",
+      title: "Reach Out",
+      body: "Make Contact the fastest route for questions, visit intent, and follow-up so the homepage always points to a single action destination.",
       media: {
         assetId: contactPageMedia.hero.id,
         role: "section",
       },
     },
   ],
+  trustSection: {
+    title: "A grounded introduction to the Gurudwara",
+    intro:
+      "The current site includes a longer About block. For the MVP homepage, that should become a concise trust-building section that explains who the Gurudwara serves and why the space matters.",
+    media: {
+      assetId: homePageMedia.gallery[0]!.id,
+      role: "gallery",
+    },
+    items: [
+      {
+        title: "Spiritual and cultural home",
+        body: "Present the Gurudwara as a welcoming place for worship, unity, seva, and cultural connection in the Downriver area.",
+      },
+      {
+        title: "Open and approachable",
+        body: "Reassure first-time visitors and families that they can learn more through About, explore Punjabi School, or go directly to Contact depending on what they need next.",
+      },
+    ],
+  },
   outlineSections: [
     {
-      title: "Welcome and introduction",
+      title: "Implemented hero",
       intro:
-        "The current site opens with a greeting, welcome language, and immediate action links. The MVP should keep that welcoming first impression but simplify it into a stronger lead section.",
+        "The homepage core experience now starts with a stronger hero built from the current-site welcome and reframed for the MVP.",
       items: [
         {
           title: "Hero message",
@@ -83,36 +94,17 @@ export const homePageContent = HomePageContentSchema.parse({
       ],
     },
     {
-      title: "Core next-step choices",
+      title: "Implemented primary sections",
       intro:
-        "The current site exposes many action tiles. The MVP should narrow that into the most useful routes for launch.",
+        "The primary homepage body should stay focused on the strongest next-step choices and a short trust-building story.",
       items: [
         {
-          title: "About path",
-          body: "Guide visitors who want background, mission, and community context into About.",
+          title: "Quick path cards",
+          body: "Use three concise cards to route visitors into About, Punjabi School, or Contact.",
         },
         {
-          title: "Punjabi School path",
-          body: "Keep Punjabi School visible as a dedicated informational route for families exploring the program.",
-        },
-        {
-          title: "Contact path",
-          body: "Route all direct outreach, join intent, and general questions into Contact instead of separate event, booking, or WhatsApp funnels.",
-        },
-      ],
-    },
-    {
-      title: "Trust-building story",
-      intro:
-        "The current homepage includes an About block describing the Gurudwara's history and role. The MVP homepage should keep a shorter version of that story as a bridge into About.",
-      items: [
-        {
-          title: "Community role",
-          body: "Summarize the Gurudwara as a spiritual and cultural anchor for the Downriver Sikh community.",
-        },
-        {
-          title: "Inclusive welcome",
-          body: "Reinforce that the space is welcoming to families, first-time visitors, and anyone seeking connection or support.",
+          title: "Trust-building overview",
+          body: "Follow the quick paths with a short grounding section that explains the Gurudwara's role before visitors move deeper into the site.",
         },
       ],
     },
