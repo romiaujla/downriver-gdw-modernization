@@ -1,21 +1,23 @@
 import Link from "next/link";
 
-import { siteNavigationItems } from "./site-navigation";
+import { siteConfig } from "../../content/site-config";
 
 export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="site-header-inner">
         <Link className="site-brand" href="/">
-          <span className="site-brand-mark">DG</span>
+          <span className="site-brand-mark">{siteConfig.settings.shortName}</span>
           <span className="site-brand-copy">
-            <span className="site-brand-title">Downriver Gurudwara</span>
-            <span className="site-brand-subtitle">Modernization MVP</span>
+            <span className="site-brand-title">{siteConfig.settings.name}</span>
+            <span className="site-brand-subtitle">
+              {siteConfig.settings.subtitle}
+            </span>
           </span>
         </Link>
 
         <nav aria-label="Primary" className="site-nav-desktop">
-          {siteNavigationItems.map((item) => (
+          {siteConfig.navigation.header.map((item) => (
             <Link
               key={item.href}
               className={[
@@ -34,7 +36,7 @@ export function SiteHeader() {
         <details className="site-nav-mobile">
           <summary className="site-nav-toggle">Menu</summary>
           <nav aria-label="Mobile primary" className="site-nav-mobile-panel">
-            {siteNavigationItems.map((item) => (
+            {siteConfig.navigation.header.map((item) => (
               <Link
                 key={item.href}
                 className={[
