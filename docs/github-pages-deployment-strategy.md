@@ -44,6 +44,13 @@ This strategy assumes:
 Because project sites are served from a repository subpath, the UI build must
 emit route and asset links that include that subpath during Pages builds.
 
+Repository setup prerequisite:
+
+- enable GitHub Pages in the repository settings before expecting the workflow
+  to publish
+- until Pages is enabled, the workflow should skip deployment rather than fail
+  the entire pipeline
+
 ## Next.js Configuration Decision
 
 The UI keeps `output: "export"` and adds a Pages-aware base path decision only

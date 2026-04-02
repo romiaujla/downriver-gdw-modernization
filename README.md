@@ -94,6 +94,8 @@ The current deployment strategy publishes only the statically exported UI from
 - build target: `pnpm --filter @repo/ui build`
 - deployable artifact: `apps/ui/out`
 - API note: `apps/api` is not deployed to GitHub Pages
+- prerequisite: enable GitHub Pages for the repository in GitHub Settings
+  before expecting deployment runs to publish
 
 See [docs/github-pages-deployment-strategy.md](docs/github-pages-deployment-strategy.md)
 for the repository assumptions, Pages subpath handling, and deployment
