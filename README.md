@@ -117,3 +117,6 @@ See [docs/static-mvp-baseline.md](docs/static-mvp-baseline.md) for the full comp
 
 The agreed MVP sitemap and page inventory for `GRA-29` live in
 [docs/mvp-sitemap.md](docs/mvp-sitemap.md).
+
+The implementation-ready header and footer navigation decisions for `GRA-30`
+live in [docs/mvp-navigation-model.md](docs/mvp-navigation-model.md).

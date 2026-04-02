@@ -107,3 +107,6 @@ This sitemap is intended to guide:
 
 If later work identifies another required MVP page, that should be treated as a
 scope change and captured in Jira before the sitemap is expanded.
+
+See `docs/mvp-navigation-model.md` for the implementation-ready header and
+footer navigation decisions derived from this sitemap.
