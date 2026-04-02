@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "next dev",
+    "dev": "next dev --port 3100",
     "lint": "eslint . --config eslint.config.mjs",
-    "start": "next start",
+    "start": "next start --port 3100",
     "test": "pnpm test:unit",
     "test:e2e": "echo \"No e2e tests configured for @repo/ui\"",
     "test:integration": "echo \"No integration tests configured for @repo/ui\"",

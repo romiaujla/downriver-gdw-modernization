@@ -73,6 +73,32 @@ pnpm --filter @repo/api dev
 pnpm --filter @repo/ui dev
 ```
 
+Default local ports:
+
+- UI: `http://localhost:3100`
+- API: `http://localhost:4100`
+
+You can still override these when needed:
+
+```bash
+PORT=4200 pnpm --filter @repo/api dev
+pnpm --filter @repo/ui dev -- --port 3200
+```
+
+## GitHub Pages Deployment
+
+The current deployment strategy publishes only the statically exported UI from
+`apps/ui/out` using a GitHub Actions Pages workflow.
+
+- workflow: `.github/workflows/deploy-pages.yml`
+- build target: `pnpm --filter @repo/ui build`
+- deployable artifact: `apps/ui/out`
+- API note: `apps/api` is not deployed to GitHub Pages
+
+See [docs/github-pages-deployment-strategy.md](docs/github-pages-deployment-strategy.md)
+for the repository assumptions, Pages subpath handling, and deployment
+tradeoffs.
+
 ## Static MVP Baseline
 
 The current MVP is configured as a static export for the UI application.

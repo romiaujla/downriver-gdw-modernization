@@ -45,11 +45,19 @@ The validated GitHub Pages deployment model for this repository is:
 - treat `apps/api` as out of scope for GitHub Pages hosting
 - keep the MVP compatible with a host that serves prebuilt files without a
   persistent Node.js runtime
+- use a GitHub Actions Pages workflow instead of branch publishing from `/` or
+  `/docs`
 
 This means the current stack is compatible with GitHub Pages only for the
 static UI portion of the monorepo. The Express API can remain in the repository,
 but it cannot be deployed on GitHub Pages as part of the same static hosting
 path.
+
+Implementation detail:
+
+- the deployment workflow is defined in `.github/workflows/deploy-pages.yml`
+- the detailed delivery decision record lives in
+  `docs/github-pages-deployment-strategy.md`
 
 ## Compatibility Matrix
 
