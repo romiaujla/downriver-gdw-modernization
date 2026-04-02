@@ -72,3 +72,14 @@ To run the apps locally:
 pnpm --filter @repo/api dev
 pnpm --filter @repo/ui dev
 ```
+
+## Static MVP Baseline
+
+The current MVP is configured as a static export for the UI application.
+
+- `apps/ui` builds with `next build` and writes a deployable static site to `apps/ui/out`
+- the baseline requires no checked-in environment variables for the content-only MVP
+- static hosting must serve the generated `apps/ui/out` assets directly
+- avoid server-only Next.js features such as dynamic rendering, request-time headers/cookies access, route handlers that require a server runtime, and image optimization that depends on the default Next.js image loader
+
+See [docs/static-mvp-baseline.md](docs/static-mvp-baseline.md) for the full environment and hosting constraints.
