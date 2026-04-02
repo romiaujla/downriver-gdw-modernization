@@ -1,5 +1,7 @@
 import { StaticPageContentSchema } from "@repo/types";
 
+import { aboutPageMedia, siteMediaLibrary } from "../media-library";
+
 export const aboutPageContent = StaticPageContentSchema.parse({
   hero: {
     eyebrow: "About",
@@ -14,12 +16,20 @@ export const aboutPageContent = StaticPageContentSchema.parse({
       href: "/punjabi-school",
       label: "Explore Punjabi School",
     },
+    media: {
+      assetId: aboutPageMedia.hero.id,
+      role: "hero",
+    },
   },
   sections: [
     {
       title: "Who we are",
       intro:
         "The About page should give first-time visitors a calm, accessible overview of the Gurudwara and its role in the community.",
+      media: {
+        assetId: siteMediaLibrary.shared.community[0]!.id,
+        role: "section",
+      },
       items: [
         {
           title: "Mission",
@@ -33,6 +43,10 @@ export const aboutPageContent = StaticPageContentSchema.parse({
     },
     {
       title: "Why this page matters",
+      media: {
+        assetId: aboutPageMedia.gallery[0]!.id,
+        role: "gallery",
+      },
       items: [
         {
           title: "Trust-building",

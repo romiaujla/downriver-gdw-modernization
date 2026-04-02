@@ -1,5 +1,7 @@
 import { StaticPageContentSchema } from "@repo/types";
 
+import { punjabiSchoolPageMedia } from "../media-library";
+
 export const punjabiSchoolPageContent = StaticPageContentSchema.parse({
   hero: {
     eyebrow: "Punjabi School",
@@ -14,12 +16,20 @@ export const punjabiSchoolPageContent = StaticPageContentSchema.parse({
       href: "/about",
       label: "Read about the Gurudwara",
     },
+    media: {
+      assetId: punjabiSchoolPageMedia.hero.id,
+      role: "hero",
+    },
   },
   sections: [
     {
       title: "Program overview",
       intro:
         "The Punjabi School page should help families quickly understand the purpose and fit of the program.",
+      media: {
+        assetId: punjabiSchoolPageMedia.gallery[0]!.id,
+        role: "gallery",
+      },
       items: [
         {
           title: "Learning focus",

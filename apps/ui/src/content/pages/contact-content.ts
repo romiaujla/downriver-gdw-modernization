@@ -1,5 +1,7 @@
 import { StaticPageContentSchema } from "@repo/types";
 
+import { contactPageMedia } from "../media-library";
+
 export const contactPageContent = StaticPageContentSchema.parse({
   hero: {
     eyebrow: "Contact",
@@ -14,12 +16,20 @@ export const contactPageContent = StaticPageContentSchema.parse({
       href: "/about",
       label: "Learn more first",
     },
+    media: {
+      assetId: contactPageMedia.hero.id,
+      role: "hero",
+    },
   },
   sections: [
     {
       title: "Primary contact information",
       intro:
         "The Contact page should centralize the details visitors need without depending on request-time integrations.",
+      media: {
+        assetId: contactPageMedia.gallery[0]!.id,
+        role: "gallery",
+      },
       items: [
         {
           title: "Core details",
