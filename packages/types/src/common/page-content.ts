@@ -45,7 +45,8 @@ export const HomePageContentSchema = z.object({
     nextStepTitle: z.string().min(1),
     nextStepBody: z.string().min(1),
   }),
-  foundationCards: z.array(ContentCardSchema).min(1),
+  quickPathCards: z.array(ContentCardSchema).min(1),
+  trustSection: ContentSectionSchema,
   outlineSections: z.array(ContentSectionSchema).min(1),
 });
 

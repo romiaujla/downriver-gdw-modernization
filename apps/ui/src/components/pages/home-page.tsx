@@ -58,7 +58,7 @@ export function HomePage() {
           </div>
 
           <div className="card-grid">
-            {homePageContent.foundationCards.map((item) => (
+            {homePageContent.quickPathCards.map((item) => (
               <InfoCard key={item.title} title={item.title} tone="muted">
                 <p>{item.body}</p>
               </InfoCard>
@@ -68,7 +68,26 @@ export function HomePage() {
 
         <SurfaceCard>
           <div className="stack-column">
-            <Eyebrow>Homepage Outline</Eyebrow>
+            <Eyebrow>Trust-Building Overview</Eyebrow>
+            <InfoCard title={homePageContent.trustSection.title} tone="soft">
+              <div className="stack-column">
+                {homePageContent.trustSection.intro ? (
+                  <p>{homePageContent.trustSection.intro}</p>
+                ) : null}
+                {homePageContent.trustSection.items.map((item) => (
+                  <div key={item.title} className="stack-column">
+                    <h3>{item.title}</h3>
+                    <p>{item.body}</p>
+                  </div>
+                ))}
+              </div>
+            </InfoCard>
+          </div>
+        </SurfaceCard>
+
+        <SurfaceCard>
+          <div className="stack-column">
+            <Eyebrow>Homepage Section Guide</Eyebrow>
             <div className="card-grid card-grid-outline">
               {homePageContent.outlineSections.map((section) => (
                 <InfoCard key={section.title} title={section.title} tone="soft">
