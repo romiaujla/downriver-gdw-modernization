@@ -3,12 +3,13 @@ import type { ReactNode } from "react";
 
 import { SiteFooter } from "../components/features/site-footer";
 import { SiteHeader } from "../components/features/site-header";
+import { siteConfig } from "../content/site-config";
 
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "React Application Bootstrap",
-  description: "Monorepo bootstrap UI scaffold",
+  title: siteConfig.settings.shellName,
+  description: siteConfig.settings.description,
 };
 
 type RootLayoutProps = {
