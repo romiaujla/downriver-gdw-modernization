@@ -317,6 +317,47 @@ button:focus-visible,
   line-height: var(--line-height-body);
 }
 
+.action-link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.action-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.75rem;
+  padding: 0.8rem 1.1rem;
+  border-radius: var(--radius-pill);
+  background: #7a4e21;
+  color: #fff8ef;
+  font-size: var(--font-size-body-sm);
+  font-weight: 700;
+  transition:
+    transform 160ms ease,
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.action-link:hover {
+  background: #623b16;
+  color: #fff8ef;
+  transform: translateY(-1px);
+}
+
+.action-link-secondary {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--color-border-subtle);
+  color: var(--color-text-strong);
+}
+
+.action-link-secondary:hover {
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--color-text-strong);
+}
+
 .stack-column {
   display: grid;
   gap: var(--space-4);
@@ -355,6 +396,17 @@ button:focus-visible,
   color: var(--color-text-muted);
   font-size: var(--font-size-body);
   line-height: var(--line-height-compact);
+}
+
+.contact-funnel-card {
+  padding: var(--space-6);
+}
+
+.contact-funnel-copy {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
 }
 
 .card-grid {

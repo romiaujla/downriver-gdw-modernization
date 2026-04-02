@@ -1,5 +1,7 @@
-import type { StaticPageContent } from "@repo/types";
+import type { SiteRouteKey, StaticPageContent } from "@repo/types";
 
+import { ContactFunnel } from "../features/contact-funnel";
+import { ActionLink } from "../ui/action-link";
 import { Eyebrow } from "../ui/eyebrow";
 import { InfoCard } from "../ui/info-card";
 import { PageShell } from "../ui/page-shell";
@@ -7,9 +9,13 @@ import { SurfaceCard } from "../ui/surface-card";
 
 type StaticContentPageProps = {
   content: StaticPageContent;
+  pageKey: SiteRouteKey;
 };
 
-export function StaticContentPage({ content }: StaticContentPageProps) {
+export function StaticContentPage({
+  content,
+  pageKey,
+}: StaticContentPageProps) {
   return (
     <PageShell>
       <section className="section-stack">
@@ -20,6 +26,21 @@ export function StaticContentPage({ content }: StaticContentPageProps) {
             <div className="hero-copy">
               <h1>{content.hero.title}</h1>
               <p>{content.hero.description}</p>
+              <div className="action-link-row">
+                {content.hero.primaryAction ? (
+                  <ActionLink
+                    href={content.hero.primaryAction.href}
+                    label={content.hero.primaryAction.label}
+                  />
+                ) : null}
+                {content.hero.secondaryAction ? (
+                  <ActionLink
+                    href={content.hero.secondaryAction.href}
+                    label={content.hero.secondaryAction.label}
+                    tone="secondary"
+                  />
+                ) : null}
+              </div>
             </div>
           </div>
 
@@ -40,6 +61,8 @@ export function StaticContentPage({ content }: StaticContentPageProps) {
             ))}
           </div>
         </SurfaceCard>
+
+        <ContactFunnel pageKey={pageKey} />
       </section>
     </PageShell>
   );
