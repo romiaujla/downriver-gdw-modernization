@@ -64,6 +64,9 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Build shared types package
+        run: pnpm --filter @repo/types build
+
       - name: Build static UI export
         env:
           GITHUB_PAGES: "true"
