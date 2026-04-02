@@ -112,3 +112,8 @@ The current MVP is configured as a static export for the UI application.
 - avoid server-only Next.js features such as dynamic rendering, request-time headers/cookies access, route handlers that require a server runtime, and image optimization that depends on the default Next.js image loader
 
 See [docs/static-mvp-baseline.md](docs/static-mvp-baseline.md) for the full compatibility matrix, hosting constraints, and known GitHub Pages tradeoffs.
+
+## MVP Information Architecture
+
+The agreed MVP sitemap and page inventory for `GRA-29` live in
+[docs/mvp-sitemap.md](docs/mvp-sitemap.md).
